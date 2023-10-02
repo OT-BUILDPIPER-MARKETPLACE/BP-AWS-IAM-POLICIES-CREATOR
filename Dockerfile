@@ -11,3 +11,5 @@ COPY policy.template .
 COPY build.sh .
 
 ADD BP-BASE-SHELL-STEPS /opt/buildpiper/shell-functions/
+
+ENTRYPOINT [ "./build.sh" ]
