@@ -2,6 +2,7 @@
 
 source /opt/buildpiper/shell-functions/log-functions.sh
 source /opt/buildpiper/shell-functions/aws-functions.sh
+source /opt/buildpiper/shell-functions/functions.sh
 
 logInfoMessage "I'll be creating a policy for AWS resource [$AWS_RESOURCE]"
 
