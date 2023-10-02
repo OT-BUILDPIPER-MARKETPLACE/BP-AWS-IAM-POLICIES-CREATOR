@@ -12,7 +12,8 @@ TASK_STATUS=0
 
 envsubst < policy.template > policy 
 POLICY_NAME=ot-${AWS_RESOURCE}-policy
-POLICY_ARN="arn:aws:iam::639033570077:policy/${POLICY_NAME}"
+AWS_ACCOUNT_ID=`getAccountId`
+POLICY_ARN="arn:aws:iam::${AWS_ACCOUNT_ID}:policy/${POLICY_NAME}"
 
 POLICY_EXISTS=`policyExists ${POLICY_ARN}`
 
