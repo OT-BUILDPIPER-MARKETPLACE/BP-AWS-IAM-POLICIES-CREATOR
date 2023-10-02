@@ -20,5 +20,5 @@ docker run -it --rm  --entrypoint sh ot/aws-iam-policy-creator:0.1
 docker run -it --rm  -e AWS_ACCESS_KEY_ID=<xxx> -e AWS_SECRET_ACCESS_KEY=<xxx> ot/aws-iam-policy-creator:0.1
 
 # Create another  policy rds 
-docker run -it --rm  -e AWS_ACCESS_KEY_ID=<xxx> -e AWS_SECRET_ACCESS_KEY=<xxx> ot/aws-iam-policy-creator:0.1
+docker run -it --rm -e AWS_RESOURCE=rds -e AWS_ACCESS_KEY_ID=<xxx> -e AWS_SECRET_ACCESS_KEY=<xxx> ot/aws-iam-policy-creator:0.1
 ```
