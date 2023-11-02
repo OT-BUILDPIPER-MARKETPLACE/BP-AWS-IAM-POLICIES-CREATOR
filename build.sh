@@ -11,7 +11,7 @@ sleep  $SLEEP_DURATION
 TASK_STATUS=0
 
 envsubst < policy.template > policy 
-POLICY_NAME=ot-${AWS_RESOURCE}-policy
+POLICY_NAME=bp-${AWS_RESOURCE}-policy
 AWS_ACCOUNT_ID=`getAccountId`
 POLICY_ARN="arn:aws:iam::${AWS_ACCOUNT_ID}:policy/${POLICY_NAME}"
 
