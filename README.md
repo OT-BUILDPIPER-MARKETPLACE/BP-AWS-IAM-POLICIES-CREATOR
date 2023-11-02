@@ -19,6 +19,9 @@ docker run -it --rm  --entrypoint sh ot/aws-iam-policy-creator:0.1
 # Create default policy s3 
 docker run -it --rm  -e AWS_ACCESS_KEY_ID=<xxx> -e AWS_SECRET_ACCESS_KEY=<xxx> ot/aws-iam-policy-creator:0.1
 
-# Create another  policy rds 
+# Create another policy rds 
 docker run -it --rm -e AWS_RESOURCE=rds -e AWS_ACCESS_KEY_ID=<xxx> -e AWS_SECRET_ACCESS_KEY=<xxx> ot/aws-iam-policy-creator:0.1
+
+# Create policies with Assume Role
+docker run -it --rm -e AWS_RESOURCE=rds -e AWS_ASSUME_ROLE_ARN=<xxx> ot/aws-iam-policy-creator:0.1
 ```

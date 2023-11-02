@@ -22,6 +22,7 @@ then
     logWarningMessage "Policy with ARN ${POLICY_ARN} already exists"
 else
     logInfoMessage "Creating Policy with ARN ${POLICY_ARN}"
+    getAssumeRole ${AWS_ASSUME_ROLE_ARN}
     createPolicy ${POLICY_NAME} policy
 fi
 
