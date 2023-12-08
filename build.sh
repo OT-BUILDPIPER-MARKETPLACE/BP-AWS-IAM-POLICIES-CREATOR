@@ -11,7 +11,9 @@ sleep  $SLEEP_DURATION
 TASK_STATUS=0
 
 envsubst < policy.template > policy 
-POLICY_NAME=ot-${AWS_RESOURCE}-policy
+POLICY_NAME=bp-${AWS_RESOURCE}-policy
+
+getAssumeRole ${AWS_ASSUME_ROLE_ARN}
 AWS_ACCOUNT_ID=`getAccountId`
 POLICY_ARN="arn:aws:iam::${AWS_ACCOUNT_ID}:policy/${POLICY_NAME}"
 
@@ -22,6 +24,7 @@ then
     logWarningMessage "Policy with ARN ${POLICY_ARN} already exists"
 else
     logInfoMessage "Creating Policy with ARN ${POLICY_ARN}"
+
     createPolicy ${POLICY_NAME} policy
 fi
 
